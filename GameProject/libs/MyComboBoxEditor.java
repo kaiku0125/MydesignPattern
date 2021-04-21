@@ -38,12 +38,8 @@ public class MyComboBoxEditor extends BasicComboBoxEditor {
         if (item == null) {
             return;
         }
-        String[] allelement = new String[5];
-        for (int i = 0; i < 5; i++) {
-            allelement[i] = String.valueOf(i);
-        }
-        allelement = (String[]) item;
-        selectedValue = allelement[0];
+        String[] weaponOption = (String[]) item;
+        selectedValue = weaponOption[0];
         labelItem.setText(selectedValue);
     }
 }

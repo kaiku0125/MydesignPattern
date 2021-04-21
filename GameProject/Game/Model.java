@@ -15,6 +15,7 @@ public class Model implements ModelInterface {
     public int stone = 0;
     boolean ismain = false;
     int banana, apple, orange, melon;
+    int swordLevel, bowLevel, currentLevel;
 
     public Model() {
         dataset = new Dataset(this);
@@ -44,6 +45,11 @@ public class Model implements ModelInterface {
         dataset.readStone();
         dataset.readClock();
         dataset.readElement();
+    }
+
+    @Override
+    public void initWeapon() {
+        dataset.readWeaponLevel();
     }
 
     @Override
@@ -80,6 +86,7 @@ public class Model implements ModelInterface {
         dataset.saveStone();
         dataset.saveClock();
         dataset.saveElement();
+        dataset.saveWeaponLevel();
     }
 
     @Override
@@ -295,4 +302,33 @@ public class Model implements ModelInterface {
         melonListener();
     }
 
+    @Override
+    public int getSwordLevel() {
+        return swordLevel;
+    }
+
+    @Override
+    public void setSwordLevel(int level) {
+        this.swordLevel = level;
+    }
+
+    @Override
+    public int getBowLevel() {
+        return bowLevel;
+    }
+
+    @Override
+    public void setBowLevel(int level) {
+        this.bowLevel = level;
+    }
+
+    @Override
+    public int getCurrentLevel() {
+        return currentLevel;
+    }
+
+    @Override
+    public void setCurrentLevel(int level) {
+        this.currentLevel = level;
+    }
 }

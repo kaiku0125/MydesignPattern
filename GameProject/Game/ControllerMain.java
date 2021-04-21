@@ -3,7 +3,6 @@ package GameProject.Game;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.logging.Logger;
-
 import javax.swing.JProgressBar;
 import GameProject.Game.Rate.BounsItem;
 import GameProject.Game.Rate.Result;
@@ -185,11 +184,13 @@ public class ControllerMain implements ControllerMainInterface {
         case SUCCESS:
             jProgressBar.setString("強化成功");
             viewMain.setdescription(msg + ", enhance Success");
+            model.setCurrentLevel(model.getCurrentLevel() + 1);
             break;
 
         case FAIL:
             jProgressBar.setString("強化失敗");
             viewMain.setdescription(msg + ", enhance Fail");
+            model.setCurrentLevel(model.getCurrentLevel() - 1);
             break;
 
         default:
@@ -253,17 +254,12 @@ public class ControllerMain implements ControllerMainInterface {
         sb.append(String.valueOf(viewMain.getAppleCombo()));
         sb.append(String.valueOf(viewMain.getOrangeCombo()));
         sb.append(String.valueOf(viewMain.getMelonCombo()));
-        String combine = sb.toString();
-        // String a = String.valueOf(viewMain.getBananaCombo());
-        // String b = String.valueOf(viewMain.getAppleCombo());
-        // String c = String.valueOf(viewMain.getOrangeCombo());
-        // String d = String.valueOf(viewMain.getMelonCombo());
-        // String combine = a + b + c + d;
-        System.out.println(combine);
-        switch (combine) {
+        System.out.println(sb);
+        switch (sb.toString()) {
         case "0010":
             plusStone(1);
             viewMain.setdescription(msg + ", Alchemy result : gstone +1");
+            break;
         }
     }
 

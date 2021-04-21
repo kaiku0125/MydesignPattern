@@ -1,13 +1,29 @@
 package GameProject.Game;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.logging.Logger;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
-import java.util.logging.Logger;
+
+import GameProject.libs.Weapon;
+import GameProject.libs.WeaponComboBox;
 
 public class ViewMain implements ActionListener, CoinObserver, ClockObserver, Callback {
     private Logger logger = Logger.getLogger(ViewMain.class.getName());
@@ -18,12 +34,12 @@ public class ViewMain implements ActionListener, CoinObserver, ClockObserver, Ca
     JPanel mainPanel, leftPanel, rightPanel, downPanel, middlePanel;
     JPanel elementPanel, elementNumPanel;
     JLabel coinLabel, stoneNumLabel, stoneClockLabel, descriptionLabel;
-    JLabel alchemyImgLabel, enhanceImgLabel;
+    JLabel alchemyImgLabel, enhanceImgLabel, weaponLevelLabel;
     JLabel bananaLabel, appleLabel, orangeLabel, melonLabel;
     JLabel bananaNum, appleNum, orangeNum, melonNum;
     JComboBox<Integer> element1, element2, element3, element4;
     JButton enhanceBtn, dailyBtn, testBtn;
-    JComboBox<String> weaponCombo;
+    WeaponComboBox weaponCombo;
     JMenuBar menuBar;
     JMenu menu;
     JMenuItem saveItem;
@@ -44,7 +60,7 @@ public class ViewMain implements ActionListener, CoinObserver, ClockObserver, Ca
         mainFrame.setResizable(false);
         mainFrame.setLocationRelativeTo(null);
         mainFrame.getContentPane().setBackground(Color.BLACK);
-        mainFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         menuBar = new JMenuBar();
         menu = new JMenu("Menu");
@@ -81,13 +97,21 @@ public class ViewMain implements ActionListener, CoinObserver, ClockObserver, Ca
         rightPanel = new JPanel();
         rightPanel.setBounds(500, 0, 100, 500);
         // component.............//
-        String[] weaponOption = new String[] { "sword" };
-        weaponCombo = new JComboBox<String>(weaponOption);
-        weaponCombo.setSelectedItem(null);
+        weaponCombo = new WeaponComboBox(model);
         weaponCombo.setBounds(0, 0, 200, 50);
+
+        weaponLevelLabel = new JLabel("..");
+        weaponLevelLabel.setBounds(75, 140, 50, 20);
+        weaponLevelLabel.setOpaque(true);
+        weaponLevelLabel.setBackground(Color.WHITE);
 
         enhanceImgLabel = new JLabel();
         enhanceImgLabel.setBounds(0, 50, 200, 200);
+
+        JLayeredPane pane = new JLayeredPane();
+        pane.setBounds(0, 50, 200, 200);
+        pane.add(enhanceImgLabel);
+        pane.add(weaponLevelLabel);
 
         enhancementBar = new JProgressBar(0, 100);
         enhancementBar.setBounds(0, 250, 200, 20);
@@ -195,7 +219,7 @@ public class ViewMain implements ActionListener, CoinObserver, ClockObserver, Ca
         testBtn = new JButton("test");
         // panel add component...................//
         leftPanel.add(weaponCombo);
-        leftPanel.add(enhanceImgLabel);
+        leftPanel.add(pane);
         leftPanel.add(enhancementBar);
         leftPanel.add(stoneNumLabel);
         leftPanel.add(stoneClockLabel);
@@ -266,6 +290,7 @@ public class ViewMain implements ActionListener, CoinObserver, ClockObserver, Ca
         enhanceBtn.addActionListener(this);
         dailyBtn.addActionListener(this);
         testBtn.addActionListener(this);
+        weaponCombo.addActionListener(this);
     }
 
     @Override
@@ -316,6 +341,10 @@ public class ViewMain implements ActionListener, CoinObserver, ClockObserver, Ca
                 element4.setSelectedItem(null);
                 showDialong("Can't insert more than u have");
             }
+        } else if (e.getSource() == weaponCombo) {
+            model.setCurrentLevel(((Weapon) weaponCombo.getSelectedItem()).getLevel());
+            String level = ((Weapon) weaponCombo.getSelectedItem()).getLeveltext();
+            weaponLevelLabel.setText(level);
         }
 
     }
@@ -351,6 +380,20 @@ public class ViewMain implements ActionListener, CoinObserver, ClockObserver, Ca
     public void enhanceProgressEnd() {
         if (controller.isEnhanceRunning() == false) {
             controller.enhanceEnd();
+            String name = ((Weapon) weaponCombo.getSelectedItem()).getName();
+            switch (name) {
+            case "Sword":
+                model.setSwordLevel(model.getCurrentLevel());
+                break;
+            case "Bow":
+                model.setBowLevel(model.getCurrentLevel());
+                break;
+            }
+            ((Weapon) weaponCombo.getSelectedItem()).setlevel(model.getCurrentLevel());
+
+            String level = ((Weapon) weaponCombo.getSelectedItem()).getLeveltext();
+            weaponLevelLabel.setText(level);
+
         }
     }
 

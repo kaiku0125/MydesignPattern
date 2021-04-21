@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 public class Dataset {
     private static Logger logger = Logger.getLogger(Dataset.class.getName());
     ArrayList<String> allClock = new ArrayList<String>();
-    // ArrayList<String> allElement = new ArrayList<String>();
+    ArrayList<String> weaponLevel = new ArrayList<String>();
     HashMap<String, Integer> allElement = new HashMap<String, Integer>();
     ModelInterface model;
     BufferedReader reader = null;
@@ -96,6 +96,37 @@ public class Dataset {
 
     public int getClockindex(int index) {
         return Integer.parseInt(allClock.get(index));
+    }
+
+    public void readWeaponLevel() {
+        try {
+            reader = new BufferedReader(new FileReader("GameProject//res//Weapon.txt"));
+            temp = reader.readLine();
+            String[] s = temp.split(",");
+            weaponLevel.add(s[0]);
+            weaponLevel.add(s[1]);
+            model.setSwordLevel(Integer.parseInt(s[0]));
+            model.setBowLevel(Integer.parseInt(s[1]));
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveWeaponLevel() {
+        try {
+            fw = new FileWriter("GameProject//res//Weapon.txt");
+            weaponLevel.set(0, String.valueOf(model.getSwordLevel()));
+            weaponLevel.set(1, String.valueOf(model.getBowLevel()));
+            fw.write(weaponLevel.get(0) + "," + weaponLevel.get(1));
+            fw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public int getWeaponLevelindex(int index) {
+        return Integer.parseInt(weaponLevel.get(index));
     }
 
     public void readElement() {

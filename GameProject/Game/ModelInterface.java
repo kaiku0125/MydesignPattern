@@ -7,6 +7,8 @@ public interface ModelInterface {
 
     void initData();
 
+    void initWeapon();
+
     void checkID();
 
     String getpassword();
@@ -90,5 +92,17 @@ public interface ModelInterface {
     int getMelon();
 
     void setMelon(int num);
+
+    int getSwordLevel();
+
+    void setSwordLevel(int level);
+
+    int getBowLevel();
+
+    void setBowLevel(int level);
+
+    int getCurrentLevel();
+
+    void setCurrentLevel(int level);
 
 }
