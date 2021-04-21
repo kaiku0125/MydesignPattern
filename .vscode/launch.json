@@ -1,0 +1,224 @@
+{
+    // 使用 IntelliSense 以得知可用的屬性。
+    // 暫留以檢視現有屬性的描述。
+    // 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Adapter_Pattern",
+            "request": "launch",
+            "mainClass": "Adapter_Pattern.Adapter_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Bridge_Pattern_testDrive",
+            "request": "launch",
+            "mainClass": "Bridge_Pattern.Bridge_Pattern_testDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Builder_Pattern_testDrive",
+            "request": "launch",
+            "mainClass": "Builder_Pattern.Builder_Pattern_testDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch COR_testDrive",
+            "request": "launch",
+            "mainClass": "Chain_of_Responsibiltiy_Pattern.COR_testDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Command_Pattern",
+            "request": "launch",
+            "mainClass": "Command_Pattern.Command_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Composite_Pattern",
+            "request": "launch",
+            "mainClass": "Composite_Pattern.Composite_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Decorate_Pattern",
+            "request": "launch",
+            "mainClass": "Decorate_Pattern.Decorate_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Facade_Client",
+            "request": "launch",
+            "mainClass": "Facade_Pattern.Facade_Client",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Factory_Pattern",
+            "request": "launch",
+            "mainClass": "Factory_Pattern.Factory_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestDrive",
+            "request": "launch",
+            "mainClass": "FlyWeight_Pattern.TestDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch GameDrive",
+            "request": "launch",
+            "mainClass": "GameProject.Game.GameDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Iterator_Pattern",
+            "request": "launch",
+            "mainClass": "Iterator_Pattern.Iterator_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch MVC_testDrive",
+            "request": "launch",
+            "mainClass": "MVC_Pattern.MVC_testDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestDrive(1)",
+            "request": "launch",
+            "mainClass": "Mediator_Pattern.TestDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Oberver_Pattern",
+            "request": "launch",
+            "mainClass": "Observer_Pattern.Oberver_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch GamePlayTestDrive",
+            "request": "launch",
+            "mainClass": "ProtectProxy_Pattern.Self_Practice.GamePlayTestDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch TanTanTestDrive",
+            "request": "launch",
+            "mainClass": "ProtectProxy_Pattern.TanTanTestDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestDrive(2)",
+            "request": "launch",
+            "mainClass": "Proxy_Pattern.TestDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch WeaponStoreMonitorTestDrive",
+            "request": "launch",
+            "mainClass": "Proxy_Pattern.WeaponStoreMonitorTestDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Singleton_Pattern",
+            "request": "launch",
+            "mainClass": "Singleton_Pattern.Singleton_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch State_Pattern",
+            "request": "launch",
+            "mainClass": "State_Pattern.State_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Strategy_Pattern",
+            "request": "launch",
+            "mainClass": "Strategy_Pattern.Strategy_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Template_Pattern",
+            "request": "launch",
+            "mainClass": "Template_Pattern.Template_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch DJTestDrive",
+            "request": "launch",
+            "mainClass": "Test_combined.djview.DJTestDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch DJViewHttpServer",
+            "request": "launch",
+            "mainClass": "Test_combined.djview.DJViewHttpServer",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch HeartTestDrive",
+            "request": "launch",
+            "mainClass": "Test_combined.djview.HeartTestDrive",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch abstract_Factory_Pattern",
+            "request": "launch",
+            "mainClass": "abstract_Factory_Pattern.abstract_Factory_Pattern",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test.test",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Client",
+            "request": "launch",
+            "mainClass": "testProxy.Client",
+            "projectName": "MydesignPattern_47c6413d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Server",
+            "request": "launch",
+            "mainClass": "testProxy.Server",
+            "projectName": "MydesignPattern_47c6413d"
+        }
+    ]
+}
