@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TestDrive",
+            "request": "launch",
+            "mainClass": "FlyWeight_Pattern.TestDrive",
+            "projectName": "MydesignPattern_7fc0a659"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
